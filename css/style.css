@@ -7,6 +7,7 @@
 :root {
   --azulMain: #00ACF0;
   --azulSecond: #DAF2FF;
+  --azulOscuro:#005070;
   --blanco: #fff;
   --marfil: #F5F8FA;
   --grisTitulos:#A4ABC2;
@@ -56,6 +57,7 @@ header {
 .nav .logo{
   height: 70px;
   width: 70px;
+  filter: brightness(0) invert(1);
 }
 .user{
   height: 35px;
@@ -129,6 +131,10 @@ color: var(--blanco)!important;
 }
 table{
   width: 100%;
+  border-width: 1px 0;
+}
+th{
+  border-bottom: none!important;
 }
 .table-responsive{
   overflow-y: hidden;
@@ -136,7 +142,49 @@ table{
 }
 .pagination, .dataTables_length{
   padding-top: 25px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
+}
+/*PAGINATION CUSTOM*/
+
+.pagination > li > a
+{
+  background-color: var(--blanco);
+  color:var(--grisTitulos);
+  transition: all 0.3s ease;
+  border-radius: 25px!important;
+  border: none;
+  margin: 0 10px;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+  color: var(--blanco);
+  background-color: var(--azulMain)
+}
+
+.pagination > .active > a
+{
+  color: var(--blanco);
+  background-color: var(--azulMain)!important;
+}
+
+.pagination > .active > a:hover
+{
+  background-color: var(--azulMain)!important;
+}
+
+.pagination > .previous > a:hover,
+.pagination > .next > a:hover{
+  background-color: var(--blanco);
+  color:var(--grisTitulos);
+}
+
+/*PAGINATION CUSTOM END*/
+.header-content nav{
+  --bs-breadcrumb-divider: '-';
 }
 .content-card{
   margin-bottom: 10%;
@@ -156,10 +204,8 @@ table{
   font-weight: 700;
   color: var(--grisTitulos);
 }
-table thead tr{
-  border-style: none!important;
-}
 
+/*CSS GLOBAL FIN*/
 /*INICIO PRODUCTOS*/
 
 .content-productos button{
@@ -204,6 +250,23 @@ table thead tr{
 .content-productos button{
   font-size: 14px;
 }
+.nombre-producto{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+.categoria, .precio, .inventario, .estado-stock, .botones-table{
+  text-align: center!important  ;
+}
+.table th{
+  text-align: center;
+}
+.table .th-1{
+  text-align: start;
+  border-left: 500px!important;
+}
+
 .btn-filtro, .btn-export{
   color: var(--azulMain);
   font-weight: 500;
@@ -250,6 +313,7 @@ table thead tr{
   background-color: #E8FFF3;
   padding: 10px 10px;
   border-radius: 8px;
+  white-space: nowrap;
 }
 .btn-acciones{
   border: none;
@@ -316,3 +380,57 @@ table thead tr{
     inset: auto !important;
 }
 /*Animación de dropdowns fin*/
+
+/*MODAL AGREGAR INICIO*/
+
+/*MODAL AGREGAR FIN*/
+
+
+/*MODAL ELIMINAR INICIO*/
+.modal-eliminar .modal-header{
+  border: none;
+}
+.modal .eliminar-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+.modal .bi-exclamation-circle-fill{
+  font-size: 250px;
+  color: var(--azulMain);
+}
+.eliminar-content h2{
+  color: var(--azulOscuro);
+  font-weight: 700;
+  font-size: 40px;
+}
+.eliminar-content span{
+  color: var(--grisTitulos);
+  font-size: 18px;
+  font-weight: 500;
+}
+.modal-footer .btn-cancel{
+  color: var(--azulMain);
+  background-color: var(--azulSecond);
+}
+.modal-footer .btn-cancel:hover{
+  color: var(--azulSecond);
+  background-color: var(--azulMain);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal-footer .btn-continuar{
+  color: var(--azulSecond);
+  background-color: var(--azulMain);
+}
+.modal-footer .btn-continuar:hover{
+  color: var(--azulMain);
+  background-color: var(--azulSecond);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.modal-eliminar .modal-footer{
+  border: none;
+}
+/*MODAL ELIMINAR FIN*/
