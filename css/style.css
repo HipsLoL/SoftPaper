@@ -246,18 +246,19 @@ th{
 #buscar-producto::placeholder{
   color: var(--grisTitulos);
 }
+
+#buscar-producto-mp::placeholder{
+  color: var(--grisTitulos);
+  font-size: 90%;
+}
+
 .content .bi-search{
   color: var(--grisTitulos);
 }
 .content-productos button{
   font-size: 14px;
 }
-.nombre-producto{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  
-}
+
 .categoria, .precio, .inventario, .estado-stock, .botones-table{
   text-align: center!important  ;
 }
@@ -383,7 +384,12 @@ th{
 }
 /*Animación de dropdowns fin*/
 
-/*MODAL AGREGAR INICIO*/
+/*MODAL AGREGAR INICIO VARGAS*/
+.addname{
+  border: none!important;
+  font-size: 30px!important;
+}
+
 .modal select{
   border-radius: 15px;
   border-color: var(--azulModal);
@@ -402,6 +408,39 @@ th{
 
 .modal .imagentext a:hover{
   color: var(--azulOscuro);
+}
+
+.image{
+  width: 100%;
+}
+
+.modal b{
+  font-size: 75%;
+}
+
+.modal-footer .btn-continuaradd{
+  color: var(--blanco);
+  background-color: var(--azulMain);
+  border-radius: 20px;
+}
+
+.modal-footer .btn-continuaradd:hover{
+  color: var(--azulMain);
+  background-color: var(--azulSecond);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal-footer .btn-canceladd{
+  color: var(--azulMain);
+  background-color: transparent;
+  border: 1px;
+  border-style: solid;
+  border-radius: 20px;
+}
+.modal-footer .btn-canceladd:hover{
+  color: var(--azulSecond);
+  background-color: var(--azulOscuro);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 /*MODAL AGREGAR FIN*/
 
@@ -454,3 +493,32 @@ th{
   border: none;
 }
 /*MODAL ELIMINAR FIN*/
+
+/* VARGAS */
+
+.content-prov{
+  padding: 1px;
+  margin-left: -60px !important;
+}
+
+.content-marca{
+  padding: 1px;
+  margin-right: -60px !important;
+}
+
+.proveedor{
+  min-height: 901px;
+}
+
+.marca{
+  min-height: 902px;
+}
+
+.tituloMP{
+  font-size: 28px;
+}
+
+tbody .imgMP{
+  width: 41.5px;
+  height: 19px;
+}

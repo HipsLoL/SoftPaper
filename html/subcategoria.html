@@ -444,10 +444,11 @@
     <!-- INICIO MODAL AGREGAR-->
     <div class="modal modal-agregar fade" id="modal-agregar" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="mt-2">Agregar Subcategoría</h3>
+                    <input type="text" class="form-control addname" id="validationDefault01" placeholder="Ingresar nombre de la subcategoría" value=""
+                           required>
                     <button type="button" class="btn-close my" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -462,20 +463,20 @@
                                         <div class="container imagenmodal">
                                             <div class="row">
                                                 <div class="col-5">
-                                                    <img src="../resources/subcategoria/cuaderno.png" alt="" width="80%">
+                                                    <img src="../resources/subcategoria/cuaderno.png" class="image" alt="" id="img1">
                                                 </div>
                                                 <div class="col-7">
-                                                    <h5 class="py-3">imagensubcat123.jpg</h5>
+                                                    <p class="my-4">imagensubcat123.jpg</p>
                                                     <div class="row imagentext">
                                                         <div class="col-6">
-                                                            <a href="#">
-                                                                <i class="fa-solid fa-eye px-2"></i>
+                                                            <a href="#" onclick="enlargeImg()">
+                                                                <i class="bi bi-eye-fill"></i>
                                                                 <b>Ver</b>
                                                             </a>
                                                         </div>
                                                         <div class="col-6">
                                                             <a href="#">
-                                                                <i class="fa-solid fa-trash-can"></i>
+                                                                <i class="bi bi-trash-fill"></i>
                                                                 <b>Eliminar</b>
                                                             </a>
                                                         </div>
@@ -502,8 +503,10 @@
                     </div>
                 </div>
                 <div class="modal-footer d-flex justify-content-end">
-                    <button class="btn btn-siguiente" type="button" data-bs-target="#modal-agregar2"
-                        data-bs-toggle="modal" data-bs-dismiss="modal">Siguiente</button>
+                    <button class="btn btn-continuaradd" type="button" data-bs-target="#modal-agregar2"
+                        data-bs-toggle="modal" data-bs-dismiss="modal">Guardar</button>
+                        <button class="btn btn-canceladd" type="button" data-bs-target="#modal-agregar2"
+                        data-bs-toggle="modal" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -541,6 +544,8 @@
     </div>
     <!-- FIN MODAL DELETE -->
 
+    <script src="../js/subcategoria.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -558,7 +563,7 @@
                 "searching": false,
                 "dom":
                     "<'row'<'col-sm-12'tr>>" +
-                    "<'row'<'col-sm-2 text-center'l><'col-sm-10'p>>",
+                    "<'row'<'col-sm-2'l><'col-sm-10'p>>",
                 "language": {
                     "lengthMenu": "Mostrando _MENU_ registros",
                     "paginate": {
