@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 /* VARIABLES GLOBALES COLORES */
 :root {
@@ -11,6 +12,7 @@
   --blanco: #fff;
   --marfil: #F5F8FA;
   --grisTitulos:#A4ABC2;
+  --azulModal: #9CDEF9;
 }
 
 body{
@@ -382,7 +384,25 @@ th{
 /*Animación de dropdowns fin*/
 
 /*MODAL AGREGAR INICIO*/
+.modal select{
+  border-radius: 15px;
+  border-color: var(--azulModal);
+}
 
+.modal .imagenmodal{
+  border-width: 1px;
+  border-color: var(--azulModal);
+  border-style: solid;
+  border-radius: 15px;
+}
+
+.modal .imagentext a{
+  color: var(--azulMain);
+}
+
+.modal .imagentext a:hover{
+  color: var(--azulOscuro);
+}
 /*MODAL AGREGAR FIN*/
 
 
