@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 /* VARIABLES GLOBALES COLORES */
 :root {
@@ -19,8 +20,14 @@ body{
   background-size: 100% 350px;
   background-repeat: no-repeat;
   background-position: center top;
-  font-family: 'Poppins', sans-serif;
+
 }
+@media (max-width: 991.98px){
+  body {
+    background-size: 100% 200px;
+}
+}
+
 body button{
   font-family: 'Poppins', sans-serif;
 }
@@ -101,7 +108,7 @@ visibility: hidden;
   background-color: rgba(255,255,255,.1);
   border-radius: 8px;
 }
-/*CSS global*/
+/*------------------------------------CSS global------------------------------------*/
 .header-content h1{
   font-size: 20px;
   font-weight: 700;
@@ -144,6 +151,42 @@ th{
   padding-top: 25px;
   margin-bottom: 18px;
 }
+/*QUITANDO SOMBRA AZUL AL HACER FOCUS DE COMPONENTES*/
+input:focus, select:focus, select, input.form-control:focus, textarea.form-control:focus{
+  outline:none !important;
+
+  outline-width: 0 !important;
+
+  box-shadow: none;
+
+  -moz-box-shadow: none;
+
+  -webkit-box-shadow: none;
+}
+/*EFECTO BOTONES GLOBALES*/
+
+.btn-main{
+  background-color: var(--azulMain);
+  color: var(--blanco);
+  transition: all 0.3s ease;
+}
+.btn-main:hover{
+  color: var(--azulMain);
+  background-color: var(--azulSecond);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.btn-second{
+  color: var(--azulMain);
+  background-color: var(--azulSecond);
+  transition: all 0.3s ease;
+}
+.btn-second:hover{
+  color: var(--blanco);
+  background-color: var(--azulMain);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*------------------------------------CSS GLOBAL FIN------------------------------------*/
 /*PAGINATION CUSTOM*/
 
 .pagination > li > a
@@ -151,7 +194,10 @@ th{
   background-color: var(--blanco);
   color:var(--grisTitulos);
   transition: all 0.3s ease;
-  border-radius: 25px!important;
+  width: 36px;
+  transform: scale(0.9);
+  text-align: center;
+  border-radius: 50%!important;
   border: none;
   margin: 0 10px;
 }
@@ -221,6 +267,8 @@ th{
   flex-direction: column;
   justify-content: end;
   align-items: center;
+  text-align: center;
+  flex-wrap: nowrap;
 }
 .n-estadistica{
   font-size: 55px;
@@ -268,19 +316,30 @@ th{
 }
 
 .btn-filtro, .btn-export{
-  color: var(--azulMain);
   font-weight: 500;
   font-size: 16px;
-  background-color: var(--azulSecond);
   border: none;
   border-radius: 8px;
   padding: 0 15px;
-  transition: all 0.3s ease;
+  height: 100%;
 }
-.btn-filtro:hover, .btn-export:hover{
-  color: var(--marfil);
-  background-color: var(--azulMain);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+.dropdown-filtro{
+  width: 250px;
+}
+.dropdown-filtro li{
+  display: flex;
+  margin: 0 15px;
+}
+.dropdown-filtro h5{
+  color: var(--grisTitulos);
+  font-weight: 500;
+}
+.filtro-combo{
+  width: 100%;
+}
+.btn-aplicar-filtro{
+  border-radius: 8px;
 }
 .bi-box-arrow-up{
   font-size: 20px;
@@ -291,18 +350,10 @@ th{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--azulMain);
-  color: var(--blanco);
   border: none;
   padding-right: 5px;
   border-radius: 8px;
   font-weight: 500;
-  transition: all 0.3s ease;
-}
-.btn-añadir:hover{
-  color: var(--azulMain);
-  background-color: var(--azulSecond);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .bi-plus{
   font-size: 24px;
@@ -325,6 +376,31 @@ th{
   background-color: var(--marfil);
   margin-left: 0!important;
 }
+
+@media (max-width: 992px) {
+  .buscador {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .btn-filtro{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+}
+@media (max-width: 768px) {
+  .row-estadisticas .col{
+    width: 50%;
+    padding: 10px 0;
+  }
+  .row-estadisticas > .col:first-child, .row-estadisticas > .col:nth-of-type(2) {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.055);
+  }
+  
+
+}
 /*FIN PRODUCTOS*/
 
 /*Animación de dropdowns*/
@@ -335,6 +411,7 @@ th{
     animation-fill-mode: both;
     -webkit-animation-fill-mode: both;
   }
+
 }
 
 @keyframes slideIn {
@@ -382,7 +459,80 @@ th{
 /*Animación de dropdowns fin*/
 
 /*MODAL AGREGAR INICIO*/
+.modal-agregar .modal-dialog{
+  max-width: 550px;
+}
+.modal-agregar .modal-content{
+  border-radius: 15px;
+  border: none;
+}
+.modal-agregar input.nombre-producto{
+  border: none;
+  color: var(--grisTitulos);
+  font-size: 28px;
+  font-weight: 500;
+}
+.modal-agregar input.nombre-producto::placeholder{
+  color: var(--grisTitulos);
+}
 
+.modal-agregar textarea{
+  border: none;
+  resize: none;
+  color: var(--grisTitulos);
+}
+.modal-agregar textarea::placeholder{
+  color: var(--grisTitulos);
+}
+.modal-agregar .form-control{
+  padding: 0 20px;
+}
+.modal-agregar .col{
+  padding:0 20px;
+}
+.modal-agregar input{
+  height: 38px;
+}
+.modal-agregar label{
+  font-weight: 500;
+  margin: 0 0 5px 5px;
+}
+.modal-agregar input, .modal-agregar select{
+  border-color: var(--azulMain);
+  border-radius: 18px;
+  font-size: 14px;
+}
+.drop-container{
+  width: 100%;
+  height: 100px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid;
+  border-color: var(--azulMain);
+}
+.bi-cloud-arrow-up-fill{
+  font-size: 70px;
+  color: var(--azulMain);
+}
+.btn-guardar{
+  color: var(--blanco);
+  background-color: var(--azulMain);
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.btn-guardar:hover{
+  color: var(--azulMain);
+  background-color: var(--azulSecond);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal-footer{
+  border: none;
+}
 /*MODAL AGREGAR FIN*/
 
 
@@ -412,25 +562,14 @@ th{
   font-weight: 500;
 }
 .modal-footer .btn-cancel{
-  color: var(--azulMain);
-  background-color: var(--azulSecond);
-}
-.modal-footer .btn-cancel:hover{
-  color: var(--azulSecond);
-  background-color: var(--azulMain);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
 }
 
 .modal-footer .btn-continuar{
-  color: var(--azulSecond);
-  background-color: var(--azulMain);
-}
-.modal-footer .btn-continuar:hover{
-  color: var(--azulMain);
-  background-color: var(--azulSecond);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
 }
 .modal-eliminar .modal-footer{
   border: none;
 }
+
 /*MODAL ELIMINAR FIN*/
