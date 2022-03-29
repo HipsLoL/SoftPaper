@@ -20,17 +20,17 @@ body{
   background-size: 100% 350px;
   background-repeat: no-repeat;
   background-position: center top;
-
 }
+
 @media (max-width: 991.98px){
   body {
     background-size: 100% 200px;
-}
 }
 
 body button{
   font-family: 'Poppins', sans-serif;
 }
+
 a{
 text-decoration: none !important;
 }
@@ -83,7 +83,6 @@ visibility: hidden;
   margin: 0 3px;
   color: var(--blanco);
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
 }
 .nav .menu-item:hover{
@@ -110,7 +109,7 @@ visibility: hidden;
 }
 /*------------------------------------CSS global------------------------------------*/
 .header-content h1{
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 700;
   color: var(--blanco);
 }
@@ -120,7 +119,6 @@ color: var(--blanco)!important;
 .breadcrumb a{
   text-decoration: none;
   color: var(--blanco);
-  font-family:'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
@@ -243,7 +241,6 @@ input:focus, select:focus, select, input.form-control:focus, textarea.form-contr
   vertical-align: middle;
   text-align: start;
   font-weight: 500;
-  font-family: 'Poppins', sans-serif;
 }
 .table th{
   text-transform: uppercase;
@@ -252,6 +249,34 @@ input:focus, select:focus, select, input.form-control:focus, textarea.form-contr
 }
 
 /*CSS GLOBAL FIN*/
+
+/* INICIO DASHBOARD*/
+.row-charts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-charts h5 {
+  color: var(--azulOscuro);
+  font-weight: 700;
+}
+
+.content-dashboard .row-tabla, .chart-dashboard {
+  background-color: var(--blanco);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
+}
+
+.row-tabla h3 {
+  font-weight: 700;
+  color: var(--azulOscuro);
+}
+
+.content-dashboard .container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /*INICIO PRODUCTOS*/
 
 .content-productos button{
@@ -304,7 +329,7 @@ input:focus, select:focus, select, input.form-control:focus, textarea.form-contr
   justify-content: flex-start;
   
 }
-.categoria, .precio, .inventario, .estado-stock, .botones-table{
+.pedido-no, .categoria, .precio, .inventario, .estado-stock, .botones-table{
   text-align: center!important  ;
 }
 .table th{
@@ -376,7 +401,7 @@ input:focus, select:focus, select, input.form-control:focus, textarea.form-contr
   background-color: var(--marfil);
   margin-left: 0!important;
 }
-
+/*RESPONSIVE PRODUCTOS*/
 @media (max-width: 992px) {
   .buscador {
     display: flex;
@@ -398,9 +423,8 @@ input:focus, select:focus, select, input.form-control:focus, textarea.form-contr
   .row-estadisticas > .col:first-child, .row-estadisticas > .col:nth-of-type(2) {
     border-bottom: 2px solid rgba(0, 0, 0, 0.055);
   }
-  
-
 }
+  /*RESPONSIVE PRODUCTOS*/
 /*FIN PRODUCTOS*/
 
 /*Animación de dropdowns*/
@@ -545,7 +569,6 @@ input:focus, select:focus, select, input.form-control:focus, textarea.form-contr
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
 }
 .modal .bi-exclamation-circle-fill{
   font-size: 250px;
@@ -571,5 +594,10 @@ input:focus, select:focus, select, input.form-control:focus, textarea.form-contr
 .modal-eliminar .modal-footer{
   border: none;
 }
+/*RESPONSIVE*/
+@media (min-width: 992px) {
+  .chart-dashboard{
+    width: 48% !important;
+  }
+}
 
-/*MODAL ELIMINAR FIN*/
